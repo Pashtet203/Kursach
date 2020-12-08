@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0e916869-6156-44b1-a56f-8bef869adfc0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Kursach/Employee.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Kursach/Message.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Kursach/Messages.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Kursach/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Kursach/EmployeeClass.cs" />
+        <option value="$PROJECT_DIR$/Kursach/MessageClass.cs" />
+        <option value="$PROJECT_DIR$/Kursach/MessagesClass.cs" />
+        <option value="$PROJECT_DIR$/Kursach/Messages.cs" />
+        <option value="$PROJECT_DIR$/Kursach/Message.cs" />
+        <option value="$PROJECT_DIR$/Kursach/Program.cs" />
+        <option value="$PROJECT_DIR$/Kursach/Employee.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kbK7gHUyoijBQkT4ZxPSJ1AnD1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.CSharpInteractiveConfiguration" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Kursach" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Kursach/bin/Debug/Kursach.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kursach/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Kursach/Kursach.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.8" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e916869-6156-44b1-a56f-8bef869adfc0" name="Default Changelist" comment="" />
+      <created>1605963689052</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605963689052</updated>
+      <workItem from="1605963701026" duration="8830000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="WindowStateProjectService">
+    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605967022475">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605967022475" />
+    <state width="1802" height="227" key="GridCell.Tab.0.bottom" timestamp="1605978020889">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="227" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1605978020889" />
+    <state width="1802" height="227" key="GridCell.Tab.0.center" timestamp="1605978020886">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="227" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1605978020886" />
+    <state width="1802" height="227" key="GridCell.Tab.0.left" timestamp="1605978020885">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="227" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1605978020885" />
+    <state width="1802" height="227" key="GridCell.Tab.0.right" timestamp="1605978020888">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="227" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1605978020888" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1605966951145">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1605966951145" />
+  </component>
+</project>
