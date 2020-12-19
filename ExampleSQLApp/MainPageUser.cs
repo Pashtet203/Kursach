@@ -15,7 +15,7 @@ namespace ExampleSQLApp
         public MainPageUser()
         {
             InitializeComponent();
-            comboBoxThemQuestions.Text = "Выберете тему";
+
             List<string> themQestions = new List<string>()
             {
                 "Вопросы о ЖКХ",

@@ -33,9 +33,10 @@
             this.userFiled = new System.Windows.Forms.TextBox();
             this.passField = new System.Windows.Forms.TextBox();
             this.enterButton = new System.Windows.Forms.Button();
+            this.RegistorClick = new System.Windows.Forms.Label();
+            this.checkBoxPass = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.RegistorClick = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,8 @@
             this.userFiled.Name = "userFiled";
             this.userFiled.Size = new System.Drawing.Size(188, 32);
             this.userFiled.TabIndex = 6;
+            this.userFiled.Enter += new System.EventHandler(this.userFiled_Enter);
+            this.userFiled.Leave += new System.EventHandler(this.userFiled_Leave);
             // 
             // passField
             // 
@@ -74,7 +77,8 @@
             this.passField.Name = "passField";
             this.passField.Size = new System.Drawing.Size(188, 33);
             this.passField.TabIndex = 7;
-            this.passField.UseSystemPasswordChar = true;
+            this.passField.Enter += new System.EventHandler(this.passField_Enter);
+            this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 
             // enterButton
             // 
@@ -91,6 +95,33 @@
             this.enterButton.Text = "Вход";
             this.enterButton.UseVisualStyleBackColor = true;
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
+            // 
+            // RegistorClick
+            // 
+            this.RegistorClick.BackColor = System.Drawing.Color.Transparent;
+            this.RegistorClick.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegistorClick.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RegistorClick.Location = new System.Drawing.Point(211, 363);
+            this.RegistorClick.Name = "RegistorClick";
+            this.RegistorClick.Size = new System.Drawing.Size(106, 26);
+            this.RegistorClick.TabIndex = 9;
+            this.RegistorClick.Text = "Нет аккаунта?";
+            this.RegistorClick.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.RegistorClick.Click += new System.EventHandler(this.RegistorClick_Click);
+            // 
+            // checkBoxPass
+            // 
+            this.checkBoxPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.checkBoxPass.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxPass.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.checkBoxPass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.checkBoxPass.Location = new System.Drawing.Point(389, 253);
+            this.checkBoxPass.Name = "checkBoxPass";
+            this.checkBoxPass.Size = new System.Drawing.Size(34, 32);
+            this.checkBoxPass.TabIndex = 10;
+            this.checkBoxPass.UseVisualStyleBackColor = true;
+            this.checkBoxPass.CheckedChanged += new System.EventHandler(this.checkBoxPass_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -112,25 +143,13 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // RegistorClick
-            // 
-            this.RegistorClick.BackColor = System.Drawing.Color.Transparent;
-            this.RegistorClick.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegistorClick.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.RegistorClick.Location = new System.Drawing.Point(211, 363);
-            this.RegistorClick.Name = "RegistorClick";
-            this.RegistorClick.Size = new System.Drawing.Size(106, 26);
-            this.RegistorClick.TabIndex = 9;
-            this.RegistorClick.Text = "Нет аккаунта?";
-            this.RegistorClick.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RegistorClick.Click += new System.EventHandler(this.RegistorClick_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(435, 449);
+            this.Controls.Add(this.checkBoxPass);
             this.Controls.Add(this.RegistorClick);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.passField);
@@ -158,5 +177,6 @@
         private System.Windows.Forms.TextBox passField;
         private System.Windows.Forms.Button enterButton;
         private System.Windows.Forms.Label RegistorClick;
+        private System.Windows.Forms.CheckBox checkBoxPass;
     }
 }

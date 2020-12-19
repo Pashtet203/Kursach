@@ -26,6 +26,3 @@ C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\obj\Debug\ExampleSQLApp.
 C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\obj\Debug\ExampleSQLApp.MainPageUser.resources
 C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\obj\Debug\ExampleSQLApp.MainPageAdministration.resources
 C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\obj\Debug\ExampleSQLApp.MainPageEmployee.resources
-C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\bin\Debug\Kursach.exe
-C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\bin\Debug\Kursach.pdb
-C:\Users\Pasha\source\repos\ExampleSQLApp\ExampleSQLApp\bin\Debug\Kursach.exe.config

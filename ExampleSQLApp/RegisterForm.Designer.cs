@@ -39,6 +39,8 @@
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxConfrimPass = new System.Windows.Forms.TextBox();
+            this.checkBoxPass = new System.Windows.Forms.CheckBox();
+            this.checkBoxPassConfrim = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // RegisterButton
@@ -49,7 +51,7 @@
             this.RegisterButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RegisterButton.Location = new System.Drawing.Point(305, 301);
+            this.RegisterButton.Location = new System.Drawing.Point(342, 300);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(188, 29);
             this.RegisterButton.TabIndex = 15;
@@ -61,6 +63,7 @@
             // 
             this.RegistrationPatronymicField.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationPatronymicField.Location = new System.Drawing.Point(138, 167);
+            this.RegistrationPatronymicField.MaxLength = 30;
             this.RegistrationPatronymicField.Name = "RegistrationPatronymicField";
             this.RegistrationPatronymicField.Size = new System.Drawing.Size(242, 33);
             this.RegistrationPatronymicField.TabIndex = 14;
@@ -70,10 +73,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(300, 9);
+            this.label1.Location = new System.Drawing.Point(337, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 45);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -90,10 +93,11 @@
             // 
             this.RegistrationDateOfBrithdayField.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationDateOfBrithdayField.Location = new System.Drawing.Point(461, 109);
+            this.RegistrationDateOfBrithdayField.MaxLength = 10;
             this.RegistrationDateOfBrithdayField.Multiline = true;
             this.RegistrationDateOfBrithdayField.Name = "RegistrationDateOfBrithdayField";
             this.RegistrationDateOfBrithdayField.Size = new System.Drawing.Size(243, 32);
-            this.RegistrationDateOfBrithdayField.TabIndex = 13;
+            this.RegistrationDateOfBrithdayField.TabIndex = 19;
             this.RegistrationDateOfBrithdayField.Enter += new System.EventHandler(this.RegistrationDateOfBrithdayField_Enter);
             this.RegistrationDateOfBrithdayField.Leave += new System.EventHandler(this.RegistrationDateOfBrithdayField_Leave);
             // 
@@ -101,6 +105,7 @@
             // 
             this.RegistrationNameField.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationNameField.Location = new System.Drawing.Point(138, 109);
+            this.RegistrationNameField.MaxLength = 20;
             this.RegistrationNameField.Multiline = true;
             this.RegistrationNameField.Name = "RegistrationNameField";
             this.RegistrationNameField.Size = new System.Drawing.Size(242, 32);
@@ -112,6 +117,7 @@
             // 
             this.RegistrationSurnameField.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationSurnameField.Location = new System.Drawing.Point(138, 57);
+            this.RegistrationSurnameField.MaxLength = 30;
             this.RegistrationSurnameField.Multiline = true;
             this.RegistrationSurnameField.Name = "RegistrationSurnameField";
             this.RegistrationSurnameField.Size = new System.Drawing.Size(242, 32);
@@ -123,6 +129,7 @@
             // 
             this.RegistrationLocationField.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationLocationField.Location = new System.Drawing.Point(461, 57);
+            this.RegistrationLocationField.MaxLength = 100;
             this.RegistrationLocationField.Multiline = true;
             this.RegistrationLocationField.Name = "RegistrationLocationField";
             this.RegistrationLocationField.Size = new System.Drawing.Size(243, 32);
@@ -134,6 +141,7 @@
             // 
             this.textBoxLogin.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.Location = new System.Drawing.Point(138, 225);
+            this.textBoxLogin.MaxLength = 20;
             this.textBoxLogin.Multiline = true;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(242, 32);
@@ -145,9 +153,9 @@
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPassword.Location = new System.Drawing.Point(461, 168);
-            this.textBoxPassword.Multiline = true;
+            this.textBoxPassword.MaxLength = 20;
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(243, 32);
+            this.textBoxPassword.Size = new System.Drawing.Size(243, 33);
             this.textBoxPassword.TabIndex = 21;
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
@@ -156,18 +164,40 @@
             // 
             this.textBoxConfrimPass.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxConfrimPass.Location = new System.Drawing.Point(461, 225);
-            this.textBoxConfrimPass.Multiline = true;
+            this.textBoxConfrimPass.MaxLength = 20;
             this.textBoxConfrimPass.Name = "textBoxConfrimPass";
-            this.textBoxConfrimPass.Size = new System.Drawing.Size(243, 32);
+            this.textBoxConfrimPass.Size = new System.Drawing.Size(243, 33);
             this.textBoxConfrimPass.TabIndex = 22;
             this.textBoxConfrimPass.Enter += new System.EventHandler(this.textBoxConfrimPass_Enter);
             this.textBoxConfrimPass.Leave += new System.EventHandler(this.textBoxConfrimPass_Leave);
+            // 
+            // checkBoxPass
+            // 
+            this.checkBoxPass.AutoSize = true;
+            this.checkBoxPass.Location = new System.Drawing.Point(711, 186);
+            this.checkBoxPass.Name = "checkBoxPass";
+            this.checkBoxPass.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxPass.TabIndex = 24;
+            this.checkBoxPass.UseVisualStyleBackColor = true;
+            this.checkBoxPass.CheckedChanged += new System.EventHandler(this.checkBoxPass_CheckedChanged);
+            // 
+            // checkBoxPassConfrim
+            // 
+            this.checkBoxPassConfrim.AutoSize = true;
+            this.checkBoxPassConfrim.Location = new System.Drawing.Point(711, 239);
+            this.checkBoxPassConfrim.Name = "checkBoxPassConfrim";
+            this.checkBoxPassConfrim.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxPassConfrim.TabIndex = 25;
+            this.checkBoxPassConfrim.UseVisualStyleBackColor = true;
+            this.checkBoxPassConfrim.CheckedChanged += new System.EventHandler(this.checkBoxPassConfrim_CheckedChanged);
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 450);
+            this.ClientSize = new System.Drawing.Size(851, 450);
+            this.Controls.Add(this.checkBoxPassConfrim);
+            this.Controls.Add(this.checkBoxPass);
             this.Controls.Add(this.textBoxConfrimPass);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
@@ -180,6 +210,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,7 +228,9 @@
         public System.Windows.Forms.TextBox RegistrationSurnameField;
         public System.Windows.Forms.TextBox RegistrationLocationField;
         public System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxConfrimPass;
+        private System.Windows.Forms.CheckBox checkBoxPass;
+        private System.Windows.Forms.CheckBox checkBoxPassConfrim;
         public System.Windows.Forms.TextBox textBoxPassword;
-        public System.Windows.Forms.TextBox textBoxConfrimPass;
     }
 }

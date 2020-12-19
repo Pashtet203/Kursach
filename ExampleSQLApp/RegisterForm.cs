@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KursachVladdd;
 
 namespace ExampleSQLApp
 {
@@ -36,31 +37,69 @@ namespace ExampleSQLApp
 
             textBoxPassword.Text = "Пароль";
             textBoxPassword.ForeColor = Color.Gray;
+            textBoxPassword.AutoSize = false;
+            textBoxPassword.Size = new Size(this.textBoxPassword.Size.Width, 33);
 
             textBoxConfrimPass.Text = "Подтвердите пароль";
             textBoxConfrimPass.ForeColor = Color.Gray;
-
-            textBoxPassword.UseSystemPasswordChar = true;
+            textBoxConfrimPass.AutoSize = false;
+            textBoxConfrimPass.Size = new Size(this.textBoxConfrimPass.Size.Width, 33);
+            panel1.Focus();
         }
-
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            //this.Hide();
-            //loginForm.Show();
             MainPageAdministration mainPageAdministration = new MainPageAdministration();
+            //this.Hide();
+            //mainPageAdministration.Show();
+            User u = new User();
+            UserDAO us = new UserDAO();
+            u.Name = RegistrationNameField.Text;
+            u.SurName = RegistrationSurnameField.Text;
+            u.Patronimyc = RegistrationPatronymicField.Text;
+            u.Login = textBoxLogin.Text;
+            u.PassWord = int.Parse(textBoxPassword.Text);
+            u.Location = RegistrationLocationField.Text;
+            u.Birthday = RegistrationDateOfBrithdayField.Text;
+            u.ID = 1;
+            us.SaveUser(u);
+            #region
 
-           mainPageAdministration.listBoxUserData.Items.Add("Логин: " + this.textBoxLogin.Text);
-           mainPageAdministration.listBoxUserData.Items.Add("Имя: " + this.RegistrationNameField.Text);
-           mainPageAdministration.listBoxUserData.Items.Add("Фамилия: " + this.RegistrationSurnameField.Text);
-           mainPageAdministration.listBoxUserData.Items.Add("Отчество: " + this.RegistrationPatronymicField.Text);
-           mainPageAdministration.listBoxUserData.Items.Add("Дата рождения: " + this.RegistrationDateOfBrithdayField.Text);
-           mainPageAdministration.listBoxUserData.Items.Add("Место жительства: " + this.RegistrationLocationField.Text);
+
+
+            //mainPageAdministration.listBoxUserData.Items.Add("Имя: " +u.Name);
+            //mainPageAdministration.listBoxUserData.Items.Add("Фамилия: " + u.SurName);
+            //mainPageAdministration.listBoxUserData.Items.Add("Отчество: " + u.Patronimyc);
+            //mainPageAdministration.listBoxUserData.Items.Add("Дата рождения: " + u.Birthday);
+            //mainPageAdministration.listBoxUserData.Items.Add("Место жительства: " + u.Location);
+            //mainPageAdministration.listBoxUserData.Items.Add("Логин: " + u.Login);
+            //mainPageAdministration.listBoxUserData.Items.Add("Пароль: " + u.PassWord);
+            #endregion
+
+            MessageBox.Show("Ожидайте подтверждение регистрации");
             this.Hide();
-            mainPageAdministration.Show();
+            LoginForm login = new LoginForm();
+            login.Show();
         }
 
+        public bool IsdigitOrSymbol(string str)
+        {
+            foreach (char ch in str)
+            {
+                if (Char.IsDigit(ch) || Char.IsControl(ch))
+                { return false; }
+            }
+            return true;
+        }
+        public bool ConfrimSymbol(string str)
+        {
+            foreach (char ch in str)
+            {
+                if (Char.IsLetter(ch))
+                { return false; }
+            }
+            return true;
+        }   
         private void RegistrationSurnameFiled_Enter(object sender, EventArgs e)
         {
             if (RegistrationSurnameField.Text == "Фамилия")
@@ -68,7 +107,6 @@ namespace ExampleSQLApp
                 RegistrationSurnameField.Text = "";
                 RegistrationSurnameField.ForeColor = Color.Black;
             }
-                
 
         }
 
@@ -79,6 +117,11 @@ namespace ExampleSQLApp
                 RegistrationSurnameField.Text = "Фамилия";
                 RegistrationSurnameField.ForeColor = Color.Gray;
             }
+            if (!IsdigitOrSymbol(RegistrationSurnameField.Text))
+                RegistrationSurnameField.BackColor = Color.Crimson;
+            else
+                RegistrationSurnameField.BackColor = Color.White;
+
         }
 
         private void RegistrationNameFiled_Enter(object sender, EventArgs e)
@@ -98,7 +141,10 @@ namespace ExampleSQLApp
                 RegistrationNameField.Text = "Имя";
                 RegistrationNameField.ForeColor = Color.Gray;
             }
-                
+            if (!IsdigitOrSymbol(RegistrationNameField.Text))
+                RegistrationNameField.BackColor = Color.Crimson;
+            else
+                RegistrationNameField.BackColor = Color.White;
         }
 
         private void RegistrationPatronymicField_Enter(object sender, EventArgs e)
@@ -118,7 +164,10 @@ namespace ExampleSQLApp
                 RegistrationPatronymicField.Text = "Отчество";
                 RegistrationPatronymicField.ForeColor = Color.Gray;
             }
-                
+            if (!IsdigitOrSymbol(RegistrationPatronymicField.Text))
+                RegistrationPatronymicField.BackColor = Color.Crimson;
+            else
+                RegistrationPatronymicField.BackColor = Color.White;
         }
 
         private void RegistrationDateOfBrithdayField_Enter(object sender, EventArgs e)
@@ -138,7 +187,10 @@ namespace ExampleSQLApp
                 RegistrationDateOfBrithdayField.Text = "Дата рождения";
                 RegistrationDateOfBrithdayField.ForeColor = Color.Gray;
             }
-                
+            if (!ConfrimSymbol(RegistrationDateOfBrithdayField.Text))
+                RegistrationDateOfBrithdayField.BackColor = Color.Crimson;
+            else
+                RegistrationDateOfBrithdayField.BackColor = Color.White;
         }
 
         private void RegistrationLocationField_Enter(object sender, EventArgs e)
@@ -150,6 +202,7 @@ namespace ExampleSQLApp
             }
                 
         }
+
         private void RegistrationLocationField_Leave(object sender, EventArgs e)
         {
             if (RegistrationLocationField.Text == "")
@@ -157,7 +210,10 @@ namespace ExampleSQLApp
                 RegistrationLocationField.Text = "Место жительства";
                 RegistrationLocationField.ForeColor = Color.Gray;
             }
-                
+            if (!IsdigitOrSymbol(RegistrationLocationField.Text))
+                RegistrationLocationField.BackColor = Color.Crimson;
+            else
+                RegistrationLocationField.BackColor = Color.White;
         }
 
         private void textBoxLogin_Enter(object sender, EventArgs e)
@@ -166,7 +222,8 @@ namespace ExampleSQLApp
             {
                 textBoxLogin.Text = "";
                 textBoxLogin.ForeColor = Color.Black;
-            }    
+            }
+
         }
 
         private void textBoxLogin_Leave(object sender, EventArgs e)
@@ -176,10 +233,15 @@ namespace ExampleSQLApp
                 textBoxLogin.Text = "Логин";
                 textBoxLogin.ForeColor = Color.Gray;
             }
+            if (ConfrimSymbol(textBoxLogin.Text))
+                textBoxLogin.BackColor = Color.Crimson;
+            else
+                textBoxLogin.BackColor = Color.White;
         }
 
         private void textBoxPassword_Enter(object sender, EventArgs e)
         {
+            textBoxPassword.UseSystemPasswordChar = true;
             if (textBoxPassword.Text == "Пароль")
             {
                 textBoxPassword.Text = "";
@@ -191,6 +253,7 @@ namespace ExampleSQLApp
         {
             if (textBoxPassword.Text == "")
             {
+                textBoxPassword.UseSystemPasswordChar = false;
                 textBoxPassword.Text = "Пароль";
                 textBoxPassword.ForeColor = Color.Gray;
             }
@@ -198,6 +261,7 @@ namespace ExampleSQLApp
 
         private void textBoxConfrimPass_Enter(object sender, EventArgs e)
         {
+            textBoxConfrimPass.UseSystemPasswordChar = true;
             if (textBoxConfrimPass.Text == "Подтвердите пароль")
             {
                 textBoxConfrimPass.Text = "";
@@ -209,9 +273,32 @@ namespace ExampleSQLApp
         {
             if (textBoxConfrimPass.Text == "")
             {
+
+                textBoxConfrimPass.UseSystemPasswordChar = false;
                 textBoxConfrimPass.Text = "Подтвердите пароль";
                 textBoxConfrimPass.ForeColor = Color.Gray;
             }
+            if (textBoxPassword.Text != textBoxConfrimPass.Text)
+                textBoxConfrimPass.BackColor = Color.Crimson;
+            else
+                textBoxConfrimPass.BackColor = Color.White;
+        }
+
+        private void checkBoxPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxPass.Checked)
+                textBoxPassword.UseSystemPasswordChar = false;
+            else
+                textBoxPassword.UseSystemPasswordChar = true;
+        }
+
+        private void checkBoxPassConfrim_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxPassConfrim.Checked)
+                textBoxConfrimPass.UseSystemPasswordChar = false;
+            else
+                textBoxConfrimPass.UseSystemPasswordChar = true;
         }
     }
 }
+

@@ -13,16 +13,33 @@ namespace ExampleSQLApp
 {
     public partial class MainPageEmployee : Form
     {
+        List<string> allMess = new List<string>() { "Тестовое письмо1", "Тестовое письмо2" };
         public MainPageEmployee()
         {
+           
             InitializeComponent();
-        }
+            List<string> themQestions = new List<string>()
+            {
+                "Вопросы о ЖКХ",
+                "Вопросы о дворовых зонах",
+                "Вопросы о зонах отдыха",
+                "Вопросы о льготных начислениях",
+            };
 
-        private void sendMessageButton_Click(object sender, EventArgs e)
+            listBoxLookMessages.DataSource = allMess;
+            Messages mess = new Messages();
+        }
+        private void listBoxLookMessages_Click(object sender, EventArgs e)
         {
-            MainPageAdministration main = new MainPageAdministration();
-            this.Hide();
-            main.Show();
+            listBoxLookMessages.ClearSelected();
+            List<string> temp = new List<string>() {"Вложение 1","Вложение 2"};
+            listBoxLookMessages.DataSource = temp;
+        }
+        
+        private void buttonComeBack_Click(object sender, EventArgs e)
+        {
+            listBoxLookMessages.ClearSelected();
+            listBoxLookMessages.DataSource = allMess;
         }
     }
 }

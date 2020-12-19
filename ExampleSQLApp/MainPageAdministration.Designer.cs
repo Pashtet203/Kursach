@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageAdministration));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIDUser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,10 @@
             this.listBoxUserData = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxCheckMessage = new System.Windows.Forms.TextBox();
+            this.buttonAutorization = new System.Windows.Forms.Button();
+            this.AutoPassClilck = new System.Windows.Forms.Button();
+            this.IDSetButton = new System.Windows.Forms.Button();
+            this.IDFinderbutton1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -92,17 +97,63 @@
             // 
             // textBoxCheckMessage
             // 
-            this.textBoxCheckMessage.Location = new System.Drawing.Point(459, 77);
+            this.textBoxCheckMessage.Location = new System.Drawing.Point(423, 77);
             this.textBoxCheckMessage.Multiline = true;
             this.textBoxCheckMessage.Name = "textBoxCheckMessage";
             this.textBoxCheckMessage.Size = new System.Drawing.Size(328, 242);
             this.textBoxCheckMessage.TabIndex = 12;
+            // 
+            // buttonAutorization
+            // 
+            this.buttonAutorization.Location = new System.Drawing.Point(302, 335);
+            this.buttonAutorization.Name = "buttonAutorization";
+            this.buttonAutorization.Size = new System.Drawing.Size(75, 23);
+            this.buttonAutorization.TabIndex = 13;
+            this.buttonAutorization.Text = "OK";
+            this.buttonAutorization.UseVisualStyleBackColor = true;
+            this.buttonAutorization.Click += new System.EventHandler(this.buttonAutorization_Click);
+            // 
+            // AutoPassClilck
+            // 
+            this.AutoPassClilck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AutoPassClilck.BackgroundImage")));
+            this.AutoPassClilck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AutoPassClilck.Location = new System.Drawing.Point(349, 105);
+            this.AutoPassClilck.Name = "AutoPassClilck";
+            this.AutoPassClilck.Size = new System.Drawing.Size(27, 22);
+            this.AutoPassClilck.TabIndex = 14;
+            this.AutoPassClilck.UseVisualStyleBackColor = true;
+            this.AutoPassClilck.Click += new System.EventHandler(this.AutoPassClilck_Click);
+            // 
+            // IDSetButton
+            // 
+            this.IDSetButton.Location = new System.Drawing.Point(264, 75);
+            this.IDSetButton.Name = "IDSetButton";
+            this.IDSetButton.Size = new System.Drawing.Size(37, 23);
+            this.IDSetButton.TabIndex = 15;
+            this.IDSetButton.Text = "OK";
+            this.IDSetButton.UseVisualStyleBackColor = true;
+            this.IDSetButton.Click += new System.EventHandler(this.IDSetButton_Click);
+            // 
+            // IDFinderbutton1
+            // 
+            this.IDFinderbutton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IDFinderbutton1.BackgroundImage")));
+            this.IDFinderbutton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IDFinderbutton1.Location = new System.Drawing.Point(316, 105);
+            this.IDFinderbutton1.Name = "IDFinderbutton1";
+            this.IDFinderbutton1.Size = new System.Drawing.Size(27, 22);
+            this.IDFinderbutton1.TabIndex = 16;
+            this.IDFinderbutton1.UseVisualStyleBackColor = true;
+            this.IDFinderbutton1.Click += new System.EventHandler(this.IDFinderbutton1_Click);
             // 
             // MainPageAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 449);
+            this.Controls.Add(this.IDFinderbutton1);
+            this.Controls.Add(this.IDSetButton);
+            this.Controls.Add(this.AutoPassClilck);
+            this.Controls.Add(this.buttonAutorization);
             this.Controls.Add(this.textBoxCheckMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listBoxUserData);
@@ -126,5 +177,9 @@
         public System.Windows.Forms.ListBox listBoxUserData;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBoxCheckMessage;
+        private System.Windows.Forms.Button buttonAutorization;
+        private System.Windows.Forms.Button AutoPassClilck;
+        private System.Windows.Forms.Button IDSetButton;
+        private System.Windows.Forms.Button IDFinderbutton1;
     }
 }
