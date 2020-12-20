@@ -61,11 +61,18 @@ namespace ExampleSQLApp
             u.Birthday = RegistrationDateOfBrithdayField.Text;
             u.ID = 1;
             us.SaveUser(u);
+            if (textBoxPassword.Text == textBoxConfrimPass.Text)
+            {
+                MessageBox.Show("Ожидайте подтверждение регистрации в течении 5 минут.");
+                this.Hide();
+                LoginForm login = new LoginForm();
+                login.Show();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте правильность паролей");
+            }
 
-            MessageBox.Show("Ожидайте подтверждение регистрации в течении 5 минут.");
-            this.Hide();
-            LoginForm login = new LoginForm();
-            login.Show();
         }
 
         public bool IsdigitOrSymbol(string str)

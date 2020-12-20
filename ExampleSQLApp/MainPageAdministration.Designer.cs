@@ -41,6 +41,10 @@
             this.IDSetButton = new System.Windows.Forms.Button();
             this.IDFinderbutton1 = new System.Windows.Forms.Button();
             this.textBoxGetUser = new System.Windows.Forms.TextBox();
+            this.radioButtonConfirmMess = new System.Windows.Forms.RadioButton();
+            this.buttonGetMessage = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCheckMess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -153,11 +157,56 @@
             this.textBoxGetUser.Size = new System.Drawing.Size(46, 20);
             this.textBoxGetUser.TabIndex = 17;
             // 
+            // radioButtonConfirmMess
+            // 
+            this.radioButtonConfirmMess.AutoSize = true;
+            this.radioButtonConfirmMess.Location = new System.Drawing.Point(423, 335);
+            this.radioButtonConfirmMess.Name = "radioButtonConfirmMess";
+            this.radioButtonConfirmMess.Size = new System.Drawing.Size(151, 17);
+            this.radioButtonConfirmMess.TabIndex = 18;
+            this.radioButtonConfirmMess.TabStop = true;
+            this.radioButtonConfirmMess.Text = "Подтвердить сообщение";
+            this.radioButtonConfirmMess.UseVisualStyleBackColor = true;
+            // 
+            // buttonGetMessage
+            // 
+            this.buttonGetMessage.Location = new System.Drawing.Point(676, 335);
+            this.buttonGetMessage.Name = "buttonGetMessage";
+            this.buttonGetMessage.Size = new System.Drawing.Size(75, 23);
+            this.buttonGetMessage.TabIndex = 19;
+            this.buttonGetMessage.Text = "OK";
+            this.buttonGetMessage.UseVisualStyleBackColor = true;
+            this.buttonGetMessage.Click += new System.EventHandler(this.buttonGetMessage_Click);
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.button1.Location = new System.Drawing.Point(734, 414);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Выход";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonCheckMess
+            // 
+            this.buttonCheckMess.Location = new System.Drawing.Point(639, 335);
+            this.buttonCheckMess.Name = "buttonCheckMess";
+            this.buttonCheckMess.Size = new System.Drawing.Size(31, 23);
+            this.buttonCheckMess.TabIndex = 21;
+            this.buttonCheckMess.UseVisualStyleBackColor = true;
+            this.buttonCheckMess.Click += new System.EventHandler(this.buttonCheckMess_Click);
+            // 
             // MainPageAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 449);
+            this.Controls.Add(this.buttonCheckMess);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonGetMessage);
+            this.Controls.Add(this.radioButtonConfirmMess);
             this.Controls.Add(this.textBoxGetUser);
             this.Controls.Add(this.IDFinderbutton1);
             this.Controls.Add(this.IDSetButton);
@@ -191,5 +240,9 @@
         private System.Windows.Forms.Button IDSetButton;
         private System.Windows.Forms.Button IDFinderbutton1;
         private System.Windows.Forms.TextBox textBoxGetUser;
+        private System.Windows.Forms.RadioButton radioButtonConfirmMess;
+        private System.Windows.Forms.Button buttonGetMessage;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCheckMess;
     }
 }

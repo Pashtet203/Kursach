@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KursachVladdd;
+using Kursach;
 
 namespace ExampleSQLApp
 {
@@ -93,5 +94,40 @@ namespace ExampleSQLApp
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            this.Hide();
+            login.Show();
+        }
+
+
+
+        private void buttonGetMessage_Click(object sender, EventArgs e)
+        {
+            Messages messages = new Messages();
+            messages.MessagesReader();
+            for (int i = 0; i < messages.AllMessages.Count; i++)
+            {
+                if (messages.AllMessages[i].MessConfirmed == false && radioButtonConfirmMess.Checked)
+                {
+                   // messages.AllMessages.RemoveAt(i);
+                    messages.AllMessages[i].MessConfirmed = true;
+                    messages.MessageWriter(messages.AllMessages[i].UserId, messages.AllMessages[i].MessConfirmed, messages.AllMessages[i].ThemeMessage, messages.AllMessages[i].Text);
+                }
+            }
+        }
+
+        private void buttonCheckMess_Click(object sender, EventArgs e)
+        {
+            Messages messages = new Messages();
+            messages.MessagesReader();
+            foreach (var oneMess in messages.AllMessages)
+            {
+                textBoxCheckMessage.Text = oneMess.UserId + "\t" + oneMess.ThemeMessage + "\t" + oneMess.Text;
+
+            }
+
+        }
     }  
 }

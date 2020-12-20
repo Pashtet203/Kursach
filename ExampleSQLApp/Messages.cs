@@ -8,9 +8,14 @@ namespace Kursach
 {
     public class Messages
     {
+        private bool messageConfirmed;
         List<Message> allMessages = new List<Message>();
 
-        public List<Message> AllMessages => allMessages;
+        public List<Message> AllMessages
+        {
+            get => allMessages;
+            //set => allMessages = value;
+        }
 
         public void MessagesReader()
         {
@@ -26,8 +31,10 @@ namespace Kursach
             Message oneMessage = new Message();
 
             oneMessage.UserId = int.Parse(oneLine[0]);
-            oneMessage.ThemeMessage = oneLine[1];
-            oneMessage.Text = oneLine[2];
+            oneMessage.MessConfirmed = bool.Parse(oneLine[1]);
+            oneMessage.ThemeMessage = oneLine[2];
+            oneMessage.Text = oneLine[3];
+            
 
             if (oneLine.Length > 3)
             {
@@ -37,10 +44,9 @@ namespace Kursach
             return oneMessage;
         }
 
-        public void MessageWriter(int id, string theme, string text)
+        public void MessageWriter(int id,bool confrim, string theme, string text)
         {
-            File.AppendAllText("DataBaseMessages.txt", id + "/" + theme + "/" + text + "\n");
-            
+            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text  +"\n");
         }
     }
 }

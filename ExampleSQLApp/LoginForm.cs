@@ -28,6 +28,7 @@ namespace ExampleSQLApp
             passField.AutoSize = false;
             passField.Size = new Size(this.passField.Size.Width, 32);
             RegistorClick.ForeColor = Color.Gray;
+
         }
 
 
@@ -49,20 +50,32 @@ namespace ExampleSQLApp
                 List<User> users = userDAO.LoadAllUser();
                 for (int i = 0; i < users.Count; i++)
                 {
-                    if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text)
+                    if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text && users[i].Confirmed == true)
                     {
                         MainPageUser mainPageUser = new MainPageUser();
+                        mainPageUser.listBoxUserLK.Items.Add("Имя: " + users[i].Name);
+                        mainPageUser.listBoxUserLK.Items.Add("Фамилия: " + users[i].SurName);
+                        mainPageUser.listBoxUserLK.Items.Add("Отчество: " + users[i].Patronimyc);
+                        mainPageUser.listBoxUserLK.Items.Add("День рождения: " + users[i].Birthday);
+                        mainPageUser.listBoxUserLK.Items.Add("Место жительства: " + users[i].Location);
+                        mainPageUser.listBoxUserLK.Items.Add("Логин: " + users[i].Login);
+                        mainPageUser.listBoxUserLK.Items.Add(users[i].ID);
                         this.Hide();
                         mainPageUser.Show();
+                        break;
                     }
                     else
                     {
-                        if(users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text)
-                            MessageBox.Show("Проверьте правильность введённых данных");
+                        if (users[i].Confirmed == false)
+                        {
+                            MessageBox.Show("Ожидайте подтверждение регистрации");
+                            break;
+                        }
                     }
-
-                        
-
+                }
+                if (users[users.Count-1].Login != userFiled.Text && users[users.Count-1].PassWord.ToString() != passField.Text)
+                {
+                    MessageBox.Show("Проверьте правильность введённых данных");
                 }
 
             }

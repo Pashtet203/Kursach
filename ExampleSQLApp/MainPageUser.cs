@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kursach;
+using KursachVladdd;
 
 namespace ExampleSQLApp
 {
@@ -27,23 +29,24 @@ namespace ExampleSQLApp
             comboBoxThemQuestions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
 
-        private void comboBoxThemQuestions_Enter(object sender, EventArgs e)
-        {
-           
-        }
 
         private void sendMessageButton_Click(object sender, EventArgs e)
         {
+            UserDAO userDAO = new UserDAO();
+            User user = userDAO.LoadUser(int.Parse(listBoxUserLK.Items[6].ToString()));
             MainPageAdministration main = new MainPageAdministration();
             MessageBox.Show("Ваше письмо отправлено");
+            Messages messages = new Messages();
+            messages.MessageWriter(user.ID,false,comboBoxThemQuestions.SelectedItem.ToString(),messageFiled.Text);
             main.textBoxCheckMessage.Text = this.messageFiled.Text;
-            this.Hide();
-            main.Show();
         }
 
-        private void messageFiled_TextChanged(object sender, EventArgs e)
-        {
 
+        private void buttonExitLK_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
         }
     }
 }
