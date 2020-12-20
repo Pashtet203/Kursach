@@ -40,6 +40,7 @@
             this.AutoPassClilck = new System.Windows.Forms.Button();
             this.IDSetButton = new System.Windows.Forms.Button();
             this.IDFinderbutton1 = new System.Windows.Forms.Button();
+            this.textBoxGetUser = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -145,11 +146,19 @@
             this.IDFinderbutton1.UseVisualStyleBackColor = true;
             this.IDFinderbutton1.Click += new System.EventHandler(this.IDFinderbutton1_Click);
             // 
+            // textBoxGetUser
+            // 
+            this.textBoxGetUser.Location = new System.Drawing.Point(264, 107);
+            this.textBoxGetUser.Name = "textBoxGetUser";
+            this.textBoxGetUser.Size = new System.Drawing.Size(46, 20);
+            this.textBoxGetUser.TabIndex = 17;
+            // 
             // MainPageAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 449);
+            this.Controls.Add(this.textBoxGetUser);
             this.Controls.Add(this.IDFinderbutton1);
             this.Controls.Add(this.IDSetButton);
             this.Controls.Add(this.AutoPassClilck);
@@ -181,5 +190,6 @@
         private System.Windows.Forms.Button AutoPassClilck;
         private System.Windows.Forms.Button IDSetButton;
         private System.Windows.Forms.Button IDFinderbutton1;
+        private System.Windows.Forms.TextBox textBoxGetUser;
     }
 }

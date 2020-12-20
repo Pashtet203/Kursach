@@ -36,7 +36,6 @@ namespace KursachVladdd
             }
             sr.Close();
             return user;
-
         }
         public User LoadUser(int Id)
         {
@@ -58,6 +57,7 @@ namespace KursachVladdd
         }
         public void SaveUser(User u)
         {
+            //File.Delete("FILE.txt");
         File.AppendAllText("FILE.txt",
                 u.Name + "\n" +
                 u.SurName + "\n" +
@@ -68,6 +68,24 @@ namespace KursachVladdd
                 u.PassWord + "\n" +
                 u.ID + "\n" +
                 u.Confirmed + "\n");
+        }
+
+        public void SaveAllUsers(List<User> users)
+        {
+            File.Delete("FILE.txt");
+            for (int i = 0; i < users.Count; i++)
+            {
+                File.AppendAllText("FILE.Txt",
+                    users[i].Name + "\n" +
+                    users[i].SurName + "\n" +
+                    users[i].Patronimyc + "\n" +
+                    users[i].Birthday + "\n" +
+                    users[i].Location + "\n" +
+                    users[i].Login + "\n" +
+                    users[i].PassWord + "\n" +
+                    users[i].ID + "\n" +
+                    users[i].Confirmed + "\n");
+            }
         }
     }
 }

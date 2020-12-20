@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using MySql.Data.MySqlClient;
+using Kursach;
+using KursachVladdd;
 
 namespace ExampleSQLApp
 {
@@ -32,6 +34,9 @@ namespace ExampleSQLApp
 
         private void enterButton_Click(object sender, EventArgs e)
         {
+            User user = new User();
+            UserDAO userDAO = new UserDAO();
+
             if (userFiled.Text == "Admin" && passField.Text == "9999")
             {
                 MainPageAdministration mainPageAdministration = new MainPageAdministration();
@@ -41,9 +46,25 @@ namespace ExampleSQLApp
             }
             else
             {
-                MainPageUser mainPageUser = new MainPageUser();
-                this.Hide();
-                mainPageUser.Show();
+                List<User> users = userDAO.LoadAllUser();
+                for (int i = 0; i < users.Count; i++)
+                {
+                    if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text)
+                    {
+                        MainPageUser mainPageUser = new MainPageUser();
+                        this.Hide();
+                        mainPageUser.Show();
+                    }
+                    else
+                    {
+                        if(users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text)
+                            MessageBox.Show("Проверьте правильность введённых данных");
+                    }
+
+                        
+
+                }
+
             }
 
 

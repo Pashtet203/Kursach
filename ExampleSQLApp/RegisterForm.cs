@@ -50,8 +50,6 @@ namespace ExampleSQLApp
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             MainPageAdministration mainPageAdministration = new MainPageAdministration();
-            //this.Hide();
-            //mainPageAdministration.Show();
             User u = new User();
             UserDAO us = new UserDAO();
             u.Name = RegistrationNameField.Text;
@@ -63,20 +61,8 @@ namespace ExampleSQLApp
             u.Birthday = RegistrationDateOfBrithdayField.Text;
             u.ID = 1;
             us.SaveUser(u);
-            #region
 
-
-
-            //mainPageAdministration.listBoxUserData.Items.Add("Имя: " +u.Name);
-            //mainPageAdministration.listBoxUserData.Items.Add("Фамилия: " + u.SurName);
-            //mainPageAdministration.listBoxUserData.Items.Add("Отчество: " + u.Patronimyc);
-            //mainPageAdministration.listBoxUserData.Items.Add("Дата рождения: " + u.Birthday);
-            //mainPageAdministration.listBoxUserData.Items.Add("Место жительства: " + u.Location);
-            //mainPageAdministration.listBoxUserData.Items.Add("Логин: " + u.Login);
-            //mainPageAdministration.listBoxUserData.Items.Add("Пароль: " + u.PassWord);
-            #endregion
-
-            MessageBox.Show("Ожидайте подтверждение регистрации");
+            MessageBox.Show("Ожидайте подтверждение регистрации в течении 5 минут.");
             this.Hide();
             LoginForm login = new LoginForm();
             login.Show();
