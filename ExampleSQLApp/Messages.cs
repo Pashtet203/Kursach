@@ -9,7 +9,6 @@ namespace Kursach
     public class Messages
     {
         private bool messageConfirmed;
-        private string refusal;
         List<Message> allMessages = new List<Message>();
 
         public List<Message> AllMessages
@@ -35,7 +34,7 @@ namespace Kursach
             oneMessage.MessConfirmed = bool.Parse(oneLine[1]);
             oneMessage.ThemeMessage = oneLine[2];
             oneMessage.Text = oneLine[3];
-            
+            oneMessage.Refusal = oneLine[4];
 
             if (oneLine.Length > 3)
             {
@@ -45,9 +44,9 @@ namespace Kursach
             return oneMessage;
         }
 
-        public void MessageWriter(int id,bool confrim, string theme, string text)
+        public void MessageWriter(int id,bool confrim, string theme, string text,string refusal)
         {
-            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text  +"\n");
+            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text + "/" + refusal);
         }
 
         public void AllMessagesWriter(List<Message> messages)
@@ -55,7 +54,7 @@ namespace Kursach
             File.Delete("DataBaseMessages.txt");
             for (int i = 0; i < messages.Count; i++)
             {
-                File.AppendAllText("DataBaseMessages.txt", messages[i].UserId.ToString()+"/"+messages[i].MessConfirmed.ToString()+"/"+messages[i].ThemeMessage+"/"+messages[i].Text+"\n");
+                File.AppendAllText("DataBaseMessages.txt", messages[i].UserId.ToString()+"/"+messages[i].MessConfirmed.ToString()+"/"+messages[i].ThemeMessage+"/"+messages[i].Text + "/" + messages[i].Refusal + "\n");
             }
         }
     }

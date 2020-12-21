@@ -20,6 +20,11 @@ namespace ExampleSQLApp
             textBoxAnswerMess.Text = "Причина отказа в подтверждении сообщения";
             textBoxCheckMessage.ReadOnly = true;
             textBoxCheckMessage.BackColor = Color.White;
+
+
+            //Messages mess = new Messages();
+            //mess.MessagesReader();
+
         }
 
         private void buttonAutorization_Click(object sender, EventArgs e)
@@ -112,19 +117,14 @@ namespace ExampleSQLApp
             messages.MessagesReader();
             List<Kursach.Message> messages1 = messages.AllMessages;
             Kursach.Message messageTemp = messages1[messages1.Count - 1];
-            for (int i = 0; i < messages1.Count; i++)
-            {
-                if (messages1[i].MessConfirmed == false && radioButtonConfirmMess.Checked)
+                if (messageTemp.MessConfirmed == false && radioButtonConfirmMess.Checked)
                 {
-                    messages1.RemoveAt(i);
-                    messageTemp.MessConfirmed = true;
-                    messages1.Insert(i, messageTemp);
+                    messages1[messages1.Count - 1].MessConfirmed = true;
                 }
-                else if (messages1[i].MessConfirmed == false && !radioButtonConfirmMess.Checked)
+                else if (!radioButtonConfirmMess.Checked && messageTemp.MessConfirmed == false)
                 {
-                    messages1[i].Text = ":Причина отказа: " + textBoxAnswerMess.Text;
+                messages1[messages1.Count - 1].Refusal = "Причина отказа: " + textBoxAnswerMess.Text;
                 }
-            }
             messages.AllMessagesWriter(messages1);
         }
 

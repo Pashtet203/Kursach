@@ -27,6 +27,17 @@ namespace ExampleSQLApp
             };
             comboBoxThemQuestions.DataSource = themQestions;
             comboBoxThemQuestions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            //Messages mess = new Messages();
+            //mess.MessagesReader();
+            //for (int i = 0; i < mess.AllMessages.Count; i++)
+            //{
+            //    if (mess.AllMessages[i].Refusal != "--")
+            //    {
+            //        messageFiled.Text = mess.AllMessages[i].ThemeMessage + "\t" + mess.AllMessages[i].Refusal;
+            //        break;
+            //    }
+
+            //}
         }
 
 
@@ -37,7 +48,7 @@ namespace ExampleSQLApp
             MainPageAdministration main = new MainPageAdministration();
             MessageBox.Show("Ваше письмо отправлено");
             Messages messages = new Messages();
-            messages.MessageWriter(user.ID,false,comboBoxThemQuestions.SelectedItem.ToString(),messageFiled.Text);
+            messages.MessageWriter(user.ID,false,comboBoxThemQuestions.SelectedItem.ToString(),messageFiled.Text,"--");
             main.textBoxCheckMessage.Text = this.messageFiled.Text;
         }
 

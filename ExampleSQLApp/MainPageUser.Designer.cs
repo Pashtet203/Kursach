@@ -101,7 +101,7 @@
             this.listBoxUserLK.FormattingEnabled = true;
             this.listBoxUserLK.Location = new System.Drawing.Point(715, 112);
             this.listBoxUserLK.Name = "listBoxUserLK";
-            this.listBoxUserLK.Size = new System.Drawing.Size(205, 134);
+            this.listBoxUserLK.Size = new System.Drawing.Size(205, 264);
             this.listBoxUserLK.TabIndex = 9;
             // 
             // MainPageUser

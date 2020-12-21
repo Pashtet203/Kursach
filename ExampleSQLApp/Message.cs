@@ -13,6 +13,7 @@ namespace Kursach
         private string textMessage;
         private string employeeAnswer = null;
         private bool messConirmed;
+        private string refusal = "--";
 
         public int UserId
         {
@@ -42,6 +43,12 @@ namespace Kursach
         {
             get => messConirmed;
             set => messConirmed = value;
+        }
+
+        public string Refusal
+        {
+            get => refusal;
+            set => refusal = value;
         }
         
         
