@@ -17,6 +17,9 @@ namespace ExampleSQLApp
         public MainPageAdministration()
         {
             InitializeComponent();
+            textBoxAnswerMess.Text = "Причина отказа в подтверждении сообщения";
+            textBoxCheckMessage.ReadOnly = true;
+            textBoxCheckMessage.BackColor = Color.White;
         }
 
         private void buttonAutorization_Click(object sender, EventArgs e)
@@ -107,15 +110,22 @@ namespace ExampleSQLApp
         {
             Messages messages = new Messages();
             messages.MessagesReader();
-            for (int i = 0; i < messages.AllMessages.Count; i++)
+            List<Kursach.Message> messages1 = messages.AllMessages;
+            Kursach.Message messageTemp = messages1[messages1.Count - 1];
+            for (int i = 0; i < messages1.Count; i++)
             {
-                if (messages.AllMessages[i].MessConfirmed == false && radioButtonConfirmMess.Checked)
+                if (messages1[i].MessConfirmed == false && radioButtonConfirmMess.Checked)
                 {
-                   // messages.AllMessages.RemoveAt(i);
-                    messages.AllMessages[i].MessConfirmed = true;
-                    messages.MessageWriter(messages.AllMessages[i].UserId, messages.AllMessages[i].MessConfirmed, messages.AllMessages[i].ThemeMessage, messages.AllMessages[i].Text);
+                    messages1.RemoveAt(i);
+                    messageTemp.MessConfirmed = true;
+                    messages1.Insert(i, messageTemp);
+                }
+                else if (messages1[i].MessConfirmed == false && !radioButtonConfirmMess.Checked)
+                {
+                    messages1[i].Text = ":Причина отказа: " + textBoxAnswerMess.Text;
                 }
             }
+            messages.AllMessagesWriter(messages1);
         }
 
         private void buttonCheckMess_Click(object sender, EventArgs e)
@@ -128,6 +138,18 @@ namespace ExampleSQLApp
 
             }
 
+        }
+
+        private void textBoxAnswerMess_Enter(object sender, EventArgs e)
+        {
+            if (textBoxAnswerMess.Text == "Причина отказа в подтверждении сообщения")
+                textBoxAnswerMess.Text = "";
+        }
+
+        private void textBoxAnswerMess_Leave(object sender, EventArgs e)
+        {
+            if (textBoxAnswerMess.Text == "")
+                textBoxAnswerMess.Text = "Причина отказа в подтверждении сообщения";
         }
     }  
 }

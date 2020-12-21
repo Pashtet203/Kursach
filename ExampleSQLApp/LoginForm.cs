@@ -48,10 +48,13 @@ namespace ExampleSQLApp
             else
             {
                 List<User> users = userDAO.LoadAllUser();
+                bool check = false;
                 for (int i = 0; i < users.Count; i++)
                 {
                     if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text && users[i].Confirmed == true)
                     {
+                        userFiled.BackColor = Color.White;
+                        userFiled.BackColor = Color.White;
                         MainPageUser mainPageUser = new MainPageUser();
                         mainPageUser.listBoxUserLK.Items.Add("Имя: " + users[i].Name);
                         mainPageUser.listBoxUserLK.Items.Add("Фамилия: " + users[i].SurName);
@@ -62,18 +65,18 @@ namespace ExampleSQLApp
                         mainPageUser.listBoxUserLK.Items.Add(users[i].ID);
                         this.Hide();
                         mainPageUser.Show();
+                        check = true;
                         break;
                     }
-                    else
+                    else if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text && users[i].Confirmed == false)
                     {
-                        if (users[i].Confirmed == false)
-                        {
-                            MessageBox.Show("Ожидайте подтверждение регистрации");
-                            break;
-                        }
+                        check = true;
+                        MessageBox.Show("Ожидайте подтверждение регистрации");
+                        break;
                     }
+
                 }
-                if (users[users.Count-1].Login != userFiled.Text && users[users.Count-1].PassWord.ToString() != passField.Text)
+                if (check == false)
                 {
                     MessageBox.Show("Проверьте правильность введённых данных");
                 }

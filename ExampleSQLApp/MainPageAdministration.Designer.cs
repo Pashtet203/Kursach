@@ -45,6 +45,7 @@
             this.buttonGetMessage = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCheckMess = new System.Windows.Forms.Button();
+            this.textBoxAnswerMess = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +106,7 @@
             this.textBoxCheckMessage.Location = new System.Drawing.Point(423, 77);
             this.textBoxCheckMessage.Multiline = true;
             this.textBoxCheckMessage.Name = "textBoxCheckMessage";
-            this.textBoxCheckMessage.Size = new System.Drawing.Size(328, 242);
+            this.textBoxCheckMessage.Size = new System.Drawing.Size(328, 118);
             this.textBoxCheckMessage.TabIndex = 12;
             // 
             // buttonAutorization
@@ -198,11 +199,22 @@
             this.buttonCheckMess.UseVisualStyleBackColor = true;
             this.buttonCheckMess.Click += new System.EventHandler(this.buttonCheckMess_Click);
             // 
+            // textBoxAnswerMess
+            // 
+            this.textBoxAnswerMess.Location = new System.Drawing.Point(423, 201);
+            this.textBoxAnswerMess.Multiline = true;
+            this.textBoxAnswerMess.Name = "textBoxAnswerMess";
+            this.textBoxAnswerMess.Size = new System.Drawing.Size(328, 118);
+            this.textBoxAnswerMess.TabIndex = 22;
+            this.textBoxAnswerMess.Enter += new System.EventHandler(this.textBoxAnswerMess_Enter);
+            this.textBoxAnswerMess.Leave += new System.EventHandler(this.textBoxAnswerMess_Leave);
+            // 
             // MainPageAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 449);
+            this.Controls.Add(this.textBoxAnswerMess);
             this.Controls.Add(this.buttonCheckMess);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonGetMessage);
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Button buttonGetMessage;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonCheckMess;
+        private System.Windows.Forms.TextBox textBoxAnswerMess;
     }
 }

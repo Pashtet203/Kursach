@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace KursachVladdd
 {
@@ -42,22 +43,24 @@ namespace KursachVladdd
             List<User> u= LoadAllUser();
             int posicion=-1;
             for(int i=0;i<u.Count;i++)
-            {
+            {   
                 if(u[i].ID==Id)
                 {
                     posicion = i;
                 }
             }
-            User e;
+            User e  = new User();
             if (posicion != -1)
-                 e = u[posicion];
+            {
+                e = u[posicion];
+               
+            }       
             else
-                throw new Exception("A negative argument");
+                MessageBox.Show("Пользователь не найден");
             return e;
         }
         public void SaveUser(User u)
         {
-            //File.Delete("FILE.txt");
         File.AppendAllText("FILE.txt",
                 u.Name + "\n" +
                 u.SurName + "\n" +
