@@ -11,7 +11,7 @@ namespace Kursach
         private int userID;
         private string themeMessage;
         private string textMessage;
-        private string employeeAnswer = null;
+        private string employeeAnswer = "---";
         private bool messConirmed;
         private string refusal = "--";
 

@@ -39,7 +39,7 @@ namespace ExampleSQLApp
                         textBoxLookMessage.Text = messages.AllMessages[i].UserId + " " + messages.AllMessages[i].Text;
                     }
                 }
-            listBoxLookMessages.Items.Clear();
+           // listBoxLookMessages.Items.Clear();
         }
         
         private void buttonComeBack_Click(object sender, EventArgs e)
@@ -58,9 +58,31 @@ namespace ExampleSQLApp
             messages.MessagesReader();
             for (int i = 0; i < messages.AllMessages.Count; i++)
             {
-                if (comboBoxMessageList.SelectedItem.ToString() == messages.AllMessages[i].ThemeMessage && messages.AllMessages[i].MessConfirmed == true)
+                if (comboBoxMessageList.SelectedItem.ToString() == messages.AllMessages[i].ThemeMessage && messages.AllMessages[i].MessConfirmed == true && messages.AllMessages[i].EmployeeAnswer == "---")
                     listBoxLookMessages.Items.Add( messages.AllMessages[i].Text);
             }
+        }
+
+        private void sendMessageButton_Click(object sender, EventArgs e)
+        {
+            Messages messages = new Messages();
+            messages.MessagesReader();
+            for (int i = 0; i < messages.AllMessages.Count; i++)
+            {
+                if (listBoxLookMessages.SelectedItem.ToString() == messages.AllMessages[i].Text)
+                {
+                    messages.AllMessages[i].EmployeeAnswer = textBoxAnswerMessage.Text;
+                    MessageBox.Show("Ответ отправлен");
+                }
+            }
+            messages.AllMessagesWriter(messages.AllMessages);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
         }
     }
 }

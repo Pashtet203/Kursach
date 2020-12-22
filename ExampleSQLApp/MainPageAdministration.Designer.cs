@@ -192,6 +192,8 @@
             // 
             // buttonCheckMess
             // 
+            this.buttonCheckMess.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckMess.BackgroundImage")));
+            this.buttonCheckMess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCheckMess.Location = new System.Drawing.Point(639, 335);
             this.buttonCheckMess.Name = "buttonCheckMess";
             this.buttonCheckMess.Size = new System.Drawing.Size(31, 23);

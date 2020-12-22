@@ -37,6 +37,7 @@
             this.listBoxLookMessages = new System.Windows.Forms.ListBox();
             this.buttonCheckMess = new System.Windows.Forms.Button();
             this.textBoxAnswerMessage = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,6 +64,7 @@
             this.sendMessageButton.TabIndex = 7;
             this.sendMessageButton.Text = "Отправить";
             this.sendMessageButton.UseVisualStyleBackColor = true;
+            this.sendMessageButton.Click += new System.EventHandler(this.sendMessageButton_Click);
             // 
             // comboBoxMessageList
             // 
@@ -88,7 +90,7 @@
             // 
             this.listBoxLookMessages.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxLookMessages.FormattingEnabled = true;
-            this.listBoxLookMessages.Location = new System.Drawing.Point(125, 131);
+            this.listBoxLookMessages.Location = new System.Drawing.Point(124, 137);
             this.listBoxLookMessages.Name = "listBoxLookMessages";
             this.listBoxLookMessages.Size = new System.Drawing.Size(141, 238);
             this.listBoxLookMessages.TabIndex = 11;
@@ -96,6 +98,8 @@
             // 
             // buttonCheckMess
             // 
+            this.buttonCheckMess.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckMess.BackgroundImage")));
+            this.buttonCheckMess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCheckMess.Location = new System.Drawing.Point(565, 67);
             this.buttonCheckMess.Name = "buttonCheckMess";
             this.buttonCheckMess.Size = new System.Drawing.Size(37, 23);
@@ -108,14 +112,26 @@
             this.textBoxAnswerMessage.Location = new System.Drawing.Point(273, 213);
             this.textBoxAnswerMessage.Multiline = true;
             this.textBoxAnswerMessage.Name = "textBoxAnswerMessage";
-            this.textBoxAnswerMessage.Size = new System.Drawing.Size(330, 156);
+            this.textBoxAnswerMessage.Size = new System.Drawing.Size(330, 162);
             this.textBoxAnswerMessage.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.button1.Location = new System.Drawing.Point(639, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Выход";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainPageEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 498);
+            this.ClientSize = new System.Drawing.Size(726, 447);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxAnswerMessage);
             this.Controls.Add(this.buttonCheckMess);
             this.Controls.Add(this.listBoxLookMessages);
@@ -141,5 +157,6 @@
         private System.Windows.Forms.ListBox listBoxLookMessages;
         private System.Windows.Forms.Button buttonCheckMess;
         private System.Windows.Forms.TextBox textBoxAnswerMessage;
+        private System.Windows.Forms.Button button1;
     }
 }

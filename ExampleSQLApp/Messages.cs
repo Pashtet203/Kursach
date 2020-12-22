@@ -34,19 +34,15 @@ namespace Kursach
             oneMessage.MessConfirmed = bool.Parse(oneLine[1]);
             oneMessage.ThemeMessage = oneLine[2];
             oneMessage.Text = oneLine[3];
-            oneMessage.Refusal = oneLine[4];
-
-            if (oneLine.Length > 3)
-            {
-                oneMessage.EmployeeAnswer = oneLine[3];
-            }
+            oneMessage.EmployeeAnswer = oneLine[4];
+            oneMessage.Refusal = oneLine[5];
 
             return oneMessage;
         }
 
-        public void MessageWriter(int id,bool confrim, string theme, string text,string refusal)
+        public void MessageWriter(int id,bool confrim, string theme, string text,string answer,string refusal)
         {
-            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text + "/" + refusal);
+            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text +"/" + answer +"/" + refusal);
         }
 
         public void AllMessagesWriter(List<Message> messages)
@@ -54,7 +50,7 @@ namespace Kursach
             File.Delete("DataBaseMessages.txt");
             for (int i = 0; i < messages.Count; i++)
             {
-                File.AppendAllText("DataBaseMessages.txt", messages[i].UserId.ToString()+"/"+messages[i].MessConfirmed.ToString()+"/"+messages[i].ThemeMessage+"/"+messages[i].Text + "/" + messages[i].Refusal + "\n");
+                File.AppendAllText("DataBaseMessages.txt", messages[i].UserId.ToString()+"/"+messages[i].MessConfirmed.ToString()+"/"+messages[i].ThemeMessage+"/"+messages[i].Text + "/" +messages[i].EmployeeAnswer+ "/" + messages[i].Refusal + "\n");
             }
         }
     }

@@ -37,7 +37,7 @@ namespace ExampleSQLApp
             MainPageAdministration main = new MainPageAdministration();
             MessageBox.Show("Ваше письмо отправлено");
             Messages messages = new Messages();
-            messages.MessageWriter(user.ID,false,comboBoxThemQuestions.SelectedItem.ToString(),messageFiled.Text,"--");
+            messages.MessageWriter(user.ID,false,comboBoxThemQuestions.SelectedItem.ToString(),messageFiled.Text,"---","--");
             main.textBoxCheckMessage.Text = this.messageFiled.Text;
         }
 
@@ -58,14 +58,29 @@ namespace ExampleSQLApp
             {
                 if (mess.AllMessages[i].UserId.ToString() == listBoxUserLK.Items[6].ToString())
                 {
-                    listBoxCheckMess.Items.Add(mess.AllMessages[i].Text + " " + mess.AllMessages[i].Refusal );
+                    listBoxCheckMess.Items.Add(mess.AllMessages[i].Text);
                 }
             }
         }
 
         private void listBoxCheckMess_Click(object sender, EventArgs e)
         {
+            Messages messages = new Messages();
+            messages.MessagesReader();
+            for (int i = 0; i < messages.AllMessages.Count; i++)
+            {
+                if (listBoxUserLK.Items[6].ToString() == messages.AllMessages[i].UserId.ToString() && listBoxCheckMess.SelectedItems[0].ToString() == messages.AllMessages[i].Text)
+                {
+                    messageFiled.Text = messages.AllMessages[i].Text + " " + messages.AllMessages[i].EmployeeAnswer + " " + messages.AllMessages[i].Refusal;
+                    break;
+                }
 
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            messageFiled.Text = "";
         }
     }
 }
