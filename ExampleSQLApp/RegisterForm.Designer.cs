@@ -228,9 +228,9 @@
         public System.Windows.Forms.TextBox RegistrationSurnameField;
         public System.Windows.Forms.TextBox RegistrationLocationField;
         public System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.TextBox textBoxConfrimPass;
         private System.Windows.Forms.CheckBox checkBoxPass;
         private System.Windows.Forms.CheckBox checkBoxPassConfrim;
         public System.Windows.Forms.TextBox textBoxPassword;
+        public System.Windows.Forms.TextBox textBoxConfrimPass;
     }
 }

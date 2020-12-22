@@ -58,6 +58,7 @@
             // 
             // textBoxIDUser
             // 
+            this.textBoxIDUser.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxIDUser.Location = new System.Drawing.Point(123, 77);
             this.textBoxIDUser.Multiline = true;
             this.textBoxIDUser.Name = "textBoxIDUser";
@@ -103,6 +104,7 @@
             // 
             // textBoxCheckMessage
             // 
+            this.textBoxCheckMessage.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
             this.textBoxCheckMessage.Location = new System.Drawing.Point(423, 77);
             this.textBoxCheckMessage.Multiline = true;
             this.textBoxCheckMessage.Name = "textBoxCheckMessage";
@@ -153,7 +155,9 @@
             // 
             // textBoxGetUser
             // 
+            this.textBoxGetUser.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
             this.textBoxGetUser.Location = new System.Drawing.Point(264, 107);
+            this.textBoxGetUser.Multiline = true;
             this.textBoxGetUser.Name = "textBoxGetUser";
             this.textBoxGetUser.Size = new System.Drawing.Size(46, 20);
             this.textBoxGetUser.TabIndex = 17;
@@ -203,6 +207,7 @@
             // 
             // textBoxAnswerMess
             // 
+            this.textBoxAnswerMess.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
             this.textBoxAnswerMess.Location = new System.Drawing.Point(423, 201);
             this.textBoxAnswerMess.Multiline = true;
             this.textBoxAnswerMess.Name = "textBoxAnswerMess";

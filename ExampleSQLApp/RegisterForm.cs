@@ -16,7 +16,7 @@ namespace ExampleSQLApp
     {
         public RegisterForm()
         {
-            InitializeComponent();
+            InitializeComponent(); // Инициализация полей при входе в форму.
             RegistrationNameField.Text = "Имя";
             RegistrationNameField.ForeColor = Color.Gray;
 
@@ -46,22 +46,29 @@ namespace ExampleSQLApp
             textBoxConfrimPass.Size = new Size(this.textBoxConfrimPass.Size.Width, 33);
             panel1.Focus();
         }
-
-        private void RegisterButton_Click(object sender, EventArgs e)
+        //При нажатии на кнопку зарегистрироваться, данные с полей формы записываются в Файл, который хранит юзеров.
+       public void RegisterButton_Click(object sender, EventArgs e) 
         {
             MainPageAdministration mainPageAdministration = new MainPageAdministration();
             User u = new User();
             UserDAO us = new UserDAO();
-            u.Name = RegistrationNameField.Text;
-            u.SurName = RegistrationSurnameField.Text;
-            u.Patronimyc = RegistrationPatronymicField.Text;
-            u.Login = textBoxLogin.Text;
-            u.PassWord = int.Parse(textBoxPassword.Text);
-            u.Location = RegistrationLocationField.Text;
-            u.Birthday = RegistrationDateOfBrithdayField.Text;
-            u.ID = 1;
-            us.SaveUser(u);
-            if (textBoxPassword.Text == textBoxConfrimPass.Text)
+            if (RegistrationNameField.Text != "Имя" && RegistrationSurnameField.Text != "Фамилия" && RegistrationPatronymicField.Text != "Отчетсво" && textBoxLogin.Text != "Логин" && RegistrationDateOfBrithdayField.Text != "Дата рождения" && RegistrationLocationField.Text != "Место жительства" && textBoxConfrimPass.Text != "Подтвердите пароль" && textBoxPassword.Text != "Пароль")
+            {
+                u.Name = RegistrationNameField.Text;
+                u.SurName = RegistrationSurnameField.Text;
+                u.Patronimyc = RegistrationPatronymicField.Text;
+                u.Login = textBoxLogin.Text;
+                u.PassWord = int.Parse(textBoxPassword.Text);
+                u.Location = RegistrationLocationField.Text;
+                u.Birthday = RegistrationDateOfBrithdayField.Text;
+                u.ID = 1;
+                us.SaveUser(u);
+            }
+            else
+            {
+                MessageBox.Show("Проверьте правильность введённых данных");
+            }   
+            if (textBoxPassword.Text == textBoxConfrimPass.Text) // Проверка на правильность подтверждения паролей.
             {
                 MessageBox.Show("Ожидайте подтверждение регистрации в течении 5 минут.");
                 this.Hide();
@@ -83,7 +90,7 @@ namespace ExampleSQLApp
                 { return false; }
             }
             return true;
-        }
+        } // метод проверяющий что в строке нет специальных символов.
         public bool ConfrimSymbol(string str)
         {
             foreach (char ch in str)
@@ -92,7 +99,7 @@ namespace ExampleSQLApp
                 { return false; }
             }
             return true;
-        }   
+        }    // Метод проверяющий что в строке нет буквенных символов.
         private void RegistrationSurnameFiled_Enter(object sender, EventArgs e)
         {
             if (RegistrationSurnameField.Text == "Фамилия")
@@ -102,7 +109,7 @@ namespace ExampleSQLApp
             }
 
         }
-
+        // Визуальная составляющия формы.
         private void RegistrationSurnameFiled_Leave(object sender, EventArgs e)
         {
             if (RegistrationSurnameField.Text == "")

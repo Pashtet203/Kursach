@@ -2,15 +2,9 @@ namespace Kursach
 {
     public class Employee
     {
-        private string name;
-        private string login;
-        private string password;
+        private string login = "Employee";
+        private string password = "8888";
 
-        public string Name
-        {
-            get => name;
-            set => name = value;
-        }
 
         public string Login
         {
@@ -24,11 +18,5 @@ namespace Kursach
             set => password = value;
         }
 
-        public void AnswerMessage()
-        {
-            Messages allMessages = new Messages();
-            allMessages.MessagesReader();
-                
-        }
     }
 }

@@ -37,26 +37,30 @@ namespace ExampleSQLApp
         {
             User user = new User();
             UserDAO userDAO = new UserDAO();
-
-            if (userFiled.Text == "Admin" && passField.Text == "9999")
+            /* Зайти за Админа */
+            Administration administrator = new Administration();
+            Employee employee = new Employee();
+            if (userFiled.Text == administrator.Login && passField.Text == administrator.PassWord)
             {
                 MainPageAdministration mainPageAdministration = new MainPageAdministration();
                 this.Hide();
                 mainPageAdministration.Show();
 
             }
-            else if (userFiled.Text == "Employee" && passField.Text == "8888")
+            /*Зайти за Депутата*/
+            else if (userFiled.Text == employee.Login && passField.Text == employee.Password)
             {
                 MainPageEmployee pageEmployee = new MainPageEmployee();
                 this.Hide();
                 pageEmployee.Show();
             }
+            /* Зайти за Одного из пользователей */
             else
             {
                 List<User> users = userDAO.LoadAllUser();
                 bool check = false;
-                for (int i = 0; i < users.Count; i++)
-                {
+                for (int i = 0; i < users.Count; i++)  // проходим по всему списку пользователей, находим того чьи Логин и пароль совпадают
+                {                                      // Переходим на страницу пользователя, так же показываем его данные.
                     if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text && users[i].Confirmed == true)
                     {
                         userFiled.BackColor = Color.White;
@@ -75,7 +79,7 @@ namespace ExampleSQLApp
                         break;
                     }
                     else if (users[i].Login == userFiled.Text && users[i].PassWord.ToString() == passField.Text && users[i].Confirmed == false)
-                    {
+                    { // если пользователь зарегестрировался, но еще не подтверждён
                         check = true;
                         MessageBox.Show("Ожидайте подтверждение регистрации");
                         break;
@@ -83,7 +87,7 @@ namespace ExampleSQLApp
 
                 }
                 if (check == false)
-                {
+                { // Если введены неправльно введены логин или пароль
                     MessageBox.Show("Проверьте правильность введённых данных");
                 }
 
@@ -99,7 +103,7 @@ namespace ExampleSQLApp
             RegisterForm registerForm1 = new RegisterForm();
             registerForm1.Show();
             registerForm1.RegisterButton.Focus();
-        }
+        } // Переход на форму регистрации
 
         private void userFiled_Enter(object sender, EventArgs e)
         {
@@ -148,6 +152,6 @@ namespace ExampleSQLApp
                 passField.UseSystemPasswordChar = false;
             else
                 passField.UseSystemPasswordChar = true;
-        }
-    }
+        } // при нажатии на чек бокс, отображается или  
+    }                                                                           // не отображается пароль.
 }

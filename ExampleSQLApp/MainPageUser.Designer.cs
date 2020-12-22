@@ -72,6 +72,7 @@
             // 
             // messageFiled
             // 
+            this.messageFiled.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
             this.messageFiled.Location = new System.Drawing.Point(124, 112);
             this.messageFiled.Multiline = true;
             this.messageFiled.Name = "messageFiled";

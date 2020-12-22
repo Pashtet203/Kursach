@@ -33,7 +33,6 @@
             this.textBoxLookMessage = new System.Windows.Forms.TextBox();
             this.sendMessageButton = new System.Windows.Forms.Button();
             this.comboBoxMessageList = new System.Windows.Forms.ComboBox();
-            this.buttonComeBack = new System.Windows.Forms.Button();
             this.listBoxLookMessages = new System.Windows.Forms.ListBox();
             this.buttonCheckMess = new System.Windows.Forms.Button();
             this.textBoxAnswerMessage = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             // 
             // textBoxLookMessage
             // 
+            this.textBoxLookMessage.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLookMessage.Location = new System.Drawing.Point(272, 105);
             this.textBoxLookMessage.Multiline = true;
             this.textBoxLookMessage.Name = "textBoxLookMessage";
@@ -74,25 +74,13 @@
             this.comboBoxMessageList.Size = new System.Drawing.Size(435, 21);
             this.comboBoxMessageList.TabIndex = 8;
             // 
-            // buttonComeBack
-            // 
-            this.buttonComeBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonComeBack.BackgroundImage")));
-            this.buttonComeBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonComeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonComeBack.Location = new System.Drawing.Point(125, 105);
-            this.buttonComeBack.Name = "buttonComeBack";
-            this.buttonComeBack.Size = new System.Drawing.Size(26, 26);
-            this.buttonComeBack.TabIndex = 10;
-            this.buttonComeBack.UseVisualStyleBackColor = true;
-            this.buttonComeBack.Click += new System.EventHandler(this.buttonComeBack_Click);
-            // 
             // listBoxLookMessages
             // 
             this.listBoxLookMessages.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxLookMessages.FormattingEnabled = true;
-            this.listBoxLookMessages.Location = new System.Drawing.Point(124, 137);
+            this.listBoxLookMessages.Location = new System.Drawing.Point(124, 111);
             this.listBoxLookMessages.Name = "listBoxLookMessages";
-            this.listBoxLookMessages.Size = new System.Drawing.Size(141, 238);
+            this.listBoxLookMessages.Size = new System.Drawing.Size(141, 264);
             this.listBoxLookMessages.TabIndex = 11;
             this.listBoxLookMessages.Click += new System.EventHandler(this.listBoxLookMessages_Click);
             // 
@@ -109,6 +97,7 @@
             // 
             // textBoxAnswerMessage
             // 
+            this.textBoxAnswerMessage.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F);
             this.textBoxAnswerMessage.Location = new System.Drawing.Point(273, 213);
             this.textBoxAnswerMessage.Multiline = true;
             this.textBoxAnswerMessage.Name = "textBoxAnswerMessage";
@@ -135,7 +124,6 @@
             this.Controls.Add(this.textBoxAnswerMessage);
             this.Controls.Add(this.buttonCheckMess);
             this.Controls.Add(this.listBoxLookMessages);
-            this.Controls.Add(this.buttonComeBack);
             this.Controls.Add(this.comboBoxMessageList);
             this.Controls.Add(this.sendMessageButton);
             this.Controls.Add(this.textBoxLookMessage);
@@ -153,7 +141,6 @@
         private System.Windows.Forms.TextBox textBoxLookMessage;
         private System.Windows.Forms.Button sendMessageButton;
         private System.Windows.Forms.ComboBox comboBoxMessageList;
-        private System.Windows.Forms.Button buttonComeBack;
         private System.Windows.Forms.ListBox listBoxLookMessages;
         private System.Windows.Forms.Button buttonCheckMess;
         private System.Windows.Forms.TextBox textBoxAnswerMessage;

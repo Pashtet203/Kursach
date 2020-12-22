@@ -42,7 +42,7 @@ namespace Kursach
 
         public void MessageWriter(int id,bool confrim, string theme, string text,string answer,string refusal)
         {
-            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text +"/" + answer +"/" + refusal);
+            File.AppendAllText("DataBaseMessages.txt", id + "/"+ messageConfirmed + "/" + theme + "/" + text +"/" + answer +"/" + refusal + "\n");
         }
 
         public void AllMessagesWriter(List<Message> messages)

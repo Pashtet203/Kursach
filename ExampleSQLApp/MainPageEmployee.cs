@@ -24,14 +24,16 @@ namespace ExampleSQLApp
                 "Вопросы о зонах отдыха",
                 "Вопросы о льготных начислениях",
             };
-
             comboBoxMessageList.DataSource = themQestions;
             comboBoxMessageList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
+        // Отображает дополнтиельные данные о выбранном письме.
         private void listBoxLookMessages_Click(object sender, EventArgs e)
         {
             Messages messages = new Messages();
-            messages.MessagesReader(); 
+            messages.MessagesReader();
+            if (listBoxLookMessages.Items.Count > 0)
+            {
                 for (int i = 0; i < messages.AllMessages.Count; i++)
                 {
                     if (listBoxLookMessages.SelectedItem.ToString() == messages.AllMessages[i].Text)
@@ -39,19 +41,13 @@ namespace ExampleSQLApp
                         textBoxLookMessage.Text = messages.AllMessages[i].UserId + " " + messages.AllMessages[i].Text;
                     }
                 }
-           // listBoxLookMessages.Items.Clear();
+            }
+            else 
+            {
+                MessageBox.Show("Обновите список");
+            }
         }
-        
-        private void buttonComeBack_Click(object sender, EventArgs e)
-        {
-            ////listBoxLookMessages.ClearSelected();
-            //Messages messages = new Messages();
-            //messages.MessagesReader();
-            buttonCheckMess_Click(sender, e);
-           // listBoxLookMessages.DataSource = messages.AllMessages.ToString();
-           textBoxLookMessage.Text = "";
-        }
-
+        // Отображает все вопросы по выбранной теме.
         private void buttonCheckMess_Click(object sender, EventArgs e)
         {
             Messages messages = new Messages();
@@ -62,22 +58,29 @@ namespace ExampleSQLApp
                     listBoxLookMessages.Items.Add( messages.AllMessages[i].Text);
             }
         }
-
+        //Записывает ответ  на выбранный вопрос.
         private void sendMessageButton_Click(object sender, EventArgs e)
         {
             Messages messages = new Messages();
             messages.MessagesReader();
-            for (int i = 0; i < messages.AllMessages.Count; i++)
+            if (textBoxAnswerMessage.Text != "")
             {
-                if (listBoxLookMessages.SelectedItem.ToString() == messages.AllMessages[i].Text)
+                for (int i = 0; i < messages.AllMessages.Count; i++)
                 {
-                    messages.AllMessages[i].EmployeeAnswer = textBoxAnswerMessage.Text;
-                    MessageBox.Show("Ответ отправлен");
+                    if (listBoxLookMessages.SelectedItem.ToString() == messages.AllMessages[i].Text)
+                    {
+                        messages.AllMessages[i].EmployeeAnswer = textBoxAnswerMessage.Text;
+                        MessageBox.Show("Ответ отправлен");
+                    }
                 }
+                messages.AllMessagesWriter(messages.AllMessages);
             }
-            messages.AllMessagesWriter(messages.AllMessages);
+            else
+            {
+                MessageBox.Show("Введите ответ");
+            }
         }
-
+        // Выходит из окна работника.
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
