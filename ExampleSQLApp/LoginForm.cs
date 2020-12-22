@@ -45,6 +45,12 @@ namespace ExampleSQLApp
                 mainPageAdministration.Show();
 
             }
+            else if (userFiled.Text == "Employee" && passField.Text == "8888")
+            {
+                MainPageEmployee pageEmployee = new MainPageEmployee();
+                this.Hide();
+                pageEmployee.Show();
+            }
             else
             {
                 List<User> users = userDAO.LoadAllUser();

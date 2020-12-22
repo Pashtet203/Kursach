@@ -13,7 +13,6 @@ namespace ExampleSQLApp
 {
     public partial class MainPageEmployee : Form
     {
-        List<string> allMess = new List<string>() { "Тестовое письмо1", "Тестовое письмо2" };
         public MainPageEmployee()
         {
            
@@ -26,20 +25,42 @@ namespace ExampleSQLApp
                 "Вопросы о льготных начислениях",
             };
 
-            listBoxLookMessages.DataSource = allMess;
-            Messages mess = new Messages();
+            comboBoxMessageList.DataSource = themQestions;
+            comboBoxMessageList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
         private void listBoxLookMessages_Click(object sender, EventArgs e)
         {
-            listBoxLookMessages.ClearSelected();
-            List<string> temp = new List<string>() {"Вложение 1","Вложение 2"};
-            listBoxLookMessages.DataSource = temp;
+            Messages messages = new Messages();
+            messages.MessagesReader(); 
+                for (int i = 0; i < messages.AllMessages.Count; i++)
+                {
+                    if (listBoxLookMessages.SelectedItem.ToString() == messages.AllMessages[i].Text)
+                    {
+                        textBoxLookMessage.Text = messages.AllMessages[i].UserId + " " + messages.AllMessages[i].Text;
+                    }
+                }
+            listBoxLookMessages.Items.Clear();
         }
         
         private void buttonComeBack_Click(object sender, EventArgs e)
         {
-            listBoxLookMessages.ClearSelected();
-            listBoxLookMessages.DataSource = allMess;
+            ////listBoxLookMessages.ClearSelected();
+            //Messages messages = new Messages();
+            //messages.MessagesReader();
+            buttonCheckMess_Click(sender, e);
+           // listBoxLookMessages.DataSource = messages.AllMessages.ToString();
+           textBoxLookMessage.Text = "";
+        }
+
+        private void buttonCheckMess_Click(object sender, EventArgs e)
+        {
+            Messages messages = new Messages();
+            messages.MessagesReader();
+            for (int i = 0; i < messages.AllMessages.Count; i++)
+            {
+                if (comboBoxMessageList.SelectedItem.ToString() == messages.AllMessages[i].ThemeMessage && messages.AllMessages[i].MessConfirmed == true)
+                    listBoxLookMessages.Items.Add( messages.AllMessages[i].Text);
+            }
         }
     }
 }

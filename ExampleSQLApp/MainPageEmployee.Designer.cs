@@ -30,11 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageEmployee));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAnswerMessage = new System.Windows.Forms.TextBox();
+            this.textBoxLookMessage = new System.Windows.Forms.TextBox();
             this.sendMessageButton = new System.Windows.Forms.Button();
             this.comboBoxMessageList = new System.Windows.Forms.ComboBox();
             this.buttonComeBack = new System.Windows.Forms.Button();
             this.listBoxLookMessages = new System.Windows.Forms.ListBox();
+            this.buttonCheckMess = new System.Windows.Forms.Button();
+            this.textBoxAnswerMessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -45,13 +47,13 @@
             this.label1.Size = new System.Drawing.Size(118, 450);
             this.label1.TabIndex = 5;
             // 
-            // textBoxAnswerMessage
+            // textBoxLookMessage
             // 
-            this.textBoxAnswerMessage.Location = new System.Drawing.Point(367, 105);
-            this.textBoxAnswerMessage.Multiline = true;
-            this.textBoxAnswerMessage.Name = "textBoxAnswerMessage";
-            this.textBoxAnswerMessage.Size = new System.Drawing.Size(236, 264);
-            this.textBoxAnswerMessage.TabIndex = 6;
+            this.textBoxLookMessage.Location = new System.Drawing.Point(272, 105);
+            this.textBoxLookMessage.Multiline = true;
+            this.textBoxLookMessage.Name = "textBoxLookMessage";
+            this.textBoxLookMessage.Size = new System.Drawing.Size(331, 101);
+            this.textBoxLookMessage.TabIndex = 6;
             // 
             // sendMessageButton
             // 
@@ -67,7 +69,7 @@
             this.comboBoxMessageList.FormattingEnabled = true;
             this.comboBoxMessageList.Location = new System.Drawing.Point(124, 67);
             this.comboBoxMessageList.Name = "comboBoxMessageList";
-            this.comboBoxMessageList.Size = new System.Drawing.Size(479, 21);
+            this.comboBoxMessageList.Size = new System.Drawing.Size(435, 21);
             this.comboBoxMessageList.TabIndex = 8;
             // 
             // buttonComeBack
@@ -88,20 +90,39 @@
             this.listBoxLookMessages.FormattingEnabled = true;
             this.listBoxLookMessages.Location = new System.Drawing.Point(125, 131);
             this.listBoxLookMessages.Name = "listBoxLookMessages";
-            this.listBoxLookMessages.Size = new System.Drawing.Size(236, 238);
+            this.listBoxLookMessages.Size = new System.Drawing.Size(141, 238);
             this.listBoxLookMessages.TabIndex = 11;
             this.listBoxLookMessages.Click += new System.EventHandler(this.listBoxLookMessages_Click);
+            // 
+            // buttonCheckMess
+            // 
+            this.buttonCheckMess.Location = new System.Drawing.Point(565, 67);
+            this.buttonCheckMess.Name = "buttonCheckMess";
+            this.buttonCheckMess.Size = new System.Drawing.Size(37, 23);
+            this.buttonCheckMess.TabIndex = 12;
+            this.buttonCheckMess.UseVisualStyleBackColor = true;
+            this.buttonCheckMess.Click += new System.EventHandler(this.buttonCheckMess_Click);
+            // 
+            // textBoxAnswerMessage
+            // 
+            this.textBoxAnswerMessage.Location = new System.Drawing.Point(273, 213);
+            this.textBoxAnswerMessage.Multiline = true;
+            this.textBoxAnswerMessage.Name = "textBoxAnswerMessage";
+            this.textBoxAnswerMessage.Size = new System.Drawing.Size(330, 156);
+            this.textBoxAnswerMessage.TabIndex = 13;
             // 
             // MainPageEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 498);
+            this.Controls.Add(this.textBoxAnswerMessage);
+            this.Controls.Add(this.buttonCheckMess);
             this.Controls.Add(this.listBoxLookMessages);
             this.Controls.Add(this.buttonComeBack);
             this.Controls.Add(this.comboBoxMessageList);
             this.Controls.Add(this.sendMessageButton);
-            this.Controls.Add(this.textBoxAnswerMessage);
+            this.Controls.Add(this.textBoxLookMessage);
             this.Controls.Add(this.label1);
             this.Name = "MainPageEmployee";
             this.Text = "MainPageEmployee";
@@ -113,10 +134,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxAnswerMessage;
+        private System.Windows.Forms.TextBox textBoxLookMessage;
         private System.Windows.Forms.Button sendMessageButton;
         private System.Windows.Forms.ComboBox comboBoxMessageList;
         private System.Windows.Forms.Button buttonComeBack;
         private System.Windows.Forms.ListBox listBoxLookMessages;
+        private System.Windows.Forms.Button buttonCheckMess;
+        private System.Windows.Forms.TextBox textBoxAnswerMessage;
     }
 }

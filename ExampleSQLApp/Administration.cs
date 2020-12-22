@@ -8,8 +8,8 @@ namespace KursachVladdd
 {
     public class Administration
     {
-        private string login;
-        private string passWord;
+        private string login = "Admin";
+        private string passWord = "9999";
 
         public string Login
         {

@@ -27,17 +27,6 @@ namespace ExampleSQLApp
             };
             comboBoxThemQuestions.DataSource = themQestions;
             comboBoxThemQuestions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            //Messages mess = new Messages();
-            //mess.MessagesReader();
-            //for (int i = 0; i < mess.AllMessages.Count; i++)
-            //{
-            //    if (mess.AllMessages[i].Refusal != "--")
-            //    {
-            //        messageFiled.Text = mess.AllMessages[i].ThemeMessage + "\t" + mess.AllMessages[i].Refusal;
-            //        break;
-            //    }
-
-            //}
         }
 
 
@@ -58,6 +47,25 @@ namespace ExampleSQLApp
             this.Hide();
             LoginForm login = new LoginForm();
             login.Show();
+        }
+
+        private void buttonCheckMess_Click(object sender, EventArgs e)
+        {
+            Messages mess = new Messages();
+            mess.MessagesReader();
+
+            for (int i = 0; i < mess.AllMessages.Count; i++)
+            {
+                if (mess.AllMessages[i].UserId.ToString() == listBoxUserLK.Items[6].ToString())
+                {
+                    listBoxCheckMess.Items.Add(mess.AllMessages[i].Text + " " + mess.AllMessages[i].Refusal );
+                }
+            }
+        }
+
+        private void listBoxCheckMess_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

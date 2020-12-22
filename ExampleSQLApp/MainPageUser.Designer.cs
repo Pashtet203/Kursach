@@ -36,6 +36,8 @@
             this.comboBoxThemQuestions = new System.Windows.Forms.ComboBox();
             this.buttonExitLK = new System.Windows.Forms.Button();
             this.listBoxUserLK = new System.Windows.Forms.ListBox();
+            this.listBoxCheckMess = new System.Windows.Forms.ListBox();
+            this.buttonCheckMess = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,16 +101,36 @@
             // listBoxUserLK
             // 
             this.listBoxUserLK.FormattingEnabled = true;
-            this.listBoxUserLK.Location = new System.Drawing.Point(715, 112);
+            this.listBoxUserLK.Location = new System.Drawing.Point(715, 74);
             this.listBoxUserLK.Name = "listBoxUserLK";
-            this.listBoxUserLK.Size = new System.Drawing.Size(205, 264);
+            this.listBoxUserLK.Size = new System.Drawing.Size(205, 108);
             this.listBoxUserLK.TabIndex = 9;
+            // 
+            // listBoxCheckMess
+            // 
+            this.listBoxCheckMess.FormattingEnabled = true;
+            this.listBoxCheckMess.Location = new System.Drawing.Point(715, 194);
+            this.listBoxCheckMess.Name = "listBoxCheckMess";
+            this.listBoxCheckMess.Size = new System.Drawing.Size(205, 186);
+            this.listBoxCheckMess.TabIndex = 10;
+            this.listBoxCheckMess.Click += new System.EventHandler(this.listBoxCheckMess_Click);
+            // 
+            // buttonCheckMess
+            // 
+            this.buttonCheckMess.Location = new System.Drawing.Point(804, 386);
+            this.buttonCheckMess.Name = "buttonCheckMess";
+            this.buttonCheckMess.Size = new System.Drawing.Size(35, 23);
+            this.buttonCheckMess.TabIndex = 11;
+            this.buttonCheckMess.UseVisualStyleBackColor = true;
+            this.buttonCheckMess.Click += new System.EventHandler(this.buttonCheckMess_Click);
             // 
             // MainPageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 449);
+            this.Controls.Add(this.buttonCheckMess);
+            this.Controls.Add(this.listBoxCheckMess);
             this.Controls.Add(this.listBoxUserLK);
             this.Controls.Add(this.buttonExitLK);
             this.Controls.Add(this.comboBoxThemQuestions);
@@ -131,5 +153,7 @@
         private System.Windows.Forms.ComboBox comboBoxThemQuestions;
         private System.Windows.Forms.Button buttonExitLK;
         public System.Windows.Forms.ListBox listBoxUserLK;
+        private System.Windows.Forms.ListBox listBoxCheckMess;
+        private System.Windows.Forms.Button buttonCheckMess;
     }
 }
