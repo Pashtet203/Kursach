@@ -22,39 +22,6 @@ namespace KursachVladdd
             set { passWord = value; }
         }
 
-        public void AutorizationPass(User u)
-        {
-           if(ProverkaStringUpper(u.Name)==false|| ProverkaStringUpper(u.SurName) == false || ProverkaStringUpper(u.Patronimyc) == false || ProverkaStringUpper(u.Location) == false || ProverkaString(u.Login) == false )
-            {
-                u.Confirmed = false;
-            }
-           
-        }
-        public bool ProverkaStringUpper(string s)
-        {
-            if(!Char.IsUpper(s[0]))
-            {
-                return false;
-            }
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (!Char.IsLetter(s[i]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-        public bool ProverkaString(string s)
-        {   
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (!Char.IsLetter(s[i]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+    
     }
 }
