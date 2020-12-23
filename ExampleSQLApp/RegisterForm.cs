@@ -49,6 +49,7 @@ namespace ExampleSQLApp
         //При нажатии на кнопку зарегистрироваться, данные с полей формы записываются в Файл, который хранит юзеров.
        public void RegisterButton_Click(object sender, EventArgs e) 
         {
+            RegisterButton.Enabled = false;
             MainPageAdministration mainPageAdministration = new MainPageAdministration();
             User u = new User();
             UserDAO us = new UserDAO();

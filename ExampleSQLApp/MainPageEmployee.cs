@@ -26,6 +26,7 @@ namespace ExampleSQLApp
             };
             comboBoxMessageList.DataSource = themQestions;
             comboBoxMessageList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            textBoxLookMessage.ReadOnly = true;
         }
         // Отображает дополнтиельные данные о выбранном письме.
         private void listBoxLookMessages_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace ExampleSQLApp
         // Отображает все вопросы по выбранной теме.
         private void buttonCheckMess_Click(object sender, EventArgs e)
         {
+            buttonCheckMess.Enabled = false;
             listBoxLookMessages.Items.Clear();
             Messages messages = new Messages();
             messages.MessagesReader();
@@ -87,6 +89,11 @@ namespace ExampleSQLApp
             this.Hide();
             LoginForm login = new LoginForm();
             login.Show();
+        }
+
+        private void comboBoxMessageList_MouseClick(object sender, MouseEventArgs e)
+        {
+            buttonCheckMess.Enabled = true;
         }
     }
 }

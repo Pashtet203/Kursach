@@ -104,7 +104,7 @@ namespace ExampleSQLApp
             registerForm1.Show();
             registerForm1.RegisterButton.Focus();
         } // Переход на форму регистрации
-
+        // Визуальная часть формы.
         private void userFiled_Enter(object sender, EventArgs e)
         {
             if (userFiled.Text == "Логин")
@@ -153,5 +153,5 @@ namespace ExampleSQLApp
             else
                 passField.UseSystemPasswordChar = true;
         } // при нажатии на чек бокс, отображается или  
-    }                                                                           // не отображается пароль.
+    }    // не отображается пароль.
 }

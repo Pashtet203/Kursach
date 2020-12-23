@@ -33,6 +33,7 @@ namespace ExampleSQLApp
         // При нажатии на кнопку, записывает письмо которое написал пользователь, в файл хранящий все письма .
         private void sendMessageButton_Click(object sender, EventArgs e)
         {
+            sendMessageButton.Enabled = false;
             if (messageFiled.Text != "")
             {
                 UserDAO userDAO = new UserDAO();
@@ -59,6 +60,7 @@ namespace ExampleSQLApp
         // При нажатии на кнопку, отображаются все письма который отпрвил пользователь который в данный момент находится в личном кабинете.
         private void buttonCheckMess_Click(object sender, EventArgs e)
         {
+            buttonCheckMess.Enabled = false;
             Messages mess = new Messages();
             mess.MessagesReader();
 
@@ -88,6 +90,8 @@ namespace ExampleSQLApp
         //При нажатии на кнопку, очищается поле ввода письма.
         private void button1_Click(object sender, EventArgs e)
         {
+            buttonCheckMess.Enabled = true;
+            sendMessageButton.Enabled = true;
             messageFiled.Text = "";
         }
     }

@@ -73,6 +73,7 @@
             this.comboBoxMessageList.Name = "comboBoxMessageList";
             this.comboBoxMessageList.Size = new System.Drawing.Size(435, 21);
             this.comboBoxMessageList.TabIndex = 8;
+            this.comboBoxMessageList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxMessageList_MouseClick);
             // 
             // listBoxLookMessages
             // 

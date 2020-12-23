@@ -20,35 +20,48 @@ namespace ExampleSQLApp
             textBoxAnswerMess.Text = "Причина отказа в подтверждении сообщения";
             textBoxCheckMessage.ReadOnly = true;
             textBoxCheckMessage.BackColor = Color.White;
-
+            buttonAutorization.Enabled = false;
+            buttonGetMessage.Enabled = false;
         }
         // При нажатии на кнопку, перезаписывает данные о пользователе, с указанием на то что он теперь авторизован и может заходить
         // в личный кабинет.
         private void buttonAutorization_Click(object sender, EventArgs e)
         {
+            IDSetButton.Enabled = true;
+            AutoPassClilck.Enabled = true;
             User user = new User();
             UserDAO userDAO = new UserDAO();
-            user = userDAO.LoadUser(int.Parse(textBoxIDUser.Text));
-            List<User> users = userDAO.LoadAllUser();
-            if (radioButtonConfrim.Checked)
+
+            if (textBoxIDUser.Text == "")
+                MessageBox.Show("В подтверждении отказано");
+            else
             {
-                for (int i = 0; i < users.Count; i++)
+                user = userDAO.LoadUser(int.Parse(textBoxIDUser.Text));
+                List<User> users = userDAO.LoadAllUser();
+                if (radioButtonConfrim.Checked)
                 {
-                    if (users[i].Confirmed == false)
+                    for (int i = 0; i < users.Count; i++)
                     {
-                        user.Confirmed = true;
-                        users.RemoveAt(i);
-                        users.Insert(i, user);
+                        if (users[i].Confirmed == false)
+                        {
+                            user.Confirmed = true;
+                            users.RemoveAt(i);
+                            users.Insert(i, user);
+                        }
                     }
                 }
+                userDAO.SaveAllUsers(users);
             }
-            userDAO.SaveAllUsers(users);
+
+
         }
 
 
         // При нажатии на кнопку , перезаписывает данные о пользователе, с указанием на измененный ID
         private void IDSetButton_Click(object sender, EventArgs e)
         {
+            IDSetButton.Enabled = false;
+            buttonAutorization.Enabled = true;
             UserDAO userDAO = new UserDAO();
             User user = userDAO.LoadUser(1);
             user.ID = int.Parse(textBoxIDUser.Text);
@@ -79,6 +92,7 @@ namespace ExampleSQLApp
         //Вывод данные о не загестрированном пользователе, и присваивает ему ID, который выбирает Администратор
         private void AutoPassClilck_Click(object sender, EventArgs e)
         {
+            AutoPassClilck.Enabled = false;
             RegisterForm register = new RegisterForm();
             UserDAO userDAO = new UserDAO();
             User user = userDAO.LoadUser(1);
@@ -125,6 +139,8 @@ namespace ExampleSQLApp
         // При нажатии кнопки,в файл записывается сообщение, если оно подтверждено Администратором 
         private void buttonGetMessage_Click(object sender, EventArgs e)
         {
+            textBoxCheckMessage.Text = "";
+            buttonCheckMess.Enabled = true;
             Messages messages = new Messages();
             messages.MessagesReader();
             List<Kursach.Message> messages1 = messages.AllMessages;
@@ -142,6 +158,8 @@ namespace ExampleSQLApp
         // При нажатии кнопки, отображается последнее неподтвержденное письмо
         private void buttonCheckMess_Click(object sender, EventArgs e)
         {
+            buttonCheckMess.Enabled = false;
+            buttonGetMessage.Enabled = true;
             Messages messages = new Messages();
             messages.MessagesReader();
             foreach (var oneMess in messages.AllMessages)
