@@ -50,6 +50,7 @@ namespace ExampleSQLApp
         // Отображает все вопросы по выбранной теме.
         private void buttonCheckMess_Click(object sender, EventArgs e)
         {
+            listBoxLookMessages.Items.Clear();
             Messages messages = new Messages();
             messages.MessagesReader();
             for (int i = 0; i < messages.AllMessages.Count; i++)

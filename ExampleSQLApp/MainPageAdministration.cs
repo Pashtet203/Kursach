@@ -28,7 +28,7 @@ namespace ExampleSQLApp
         {
             User user = new User();
             UserDAO userDAO = new UserDAO();
-            user = userDAO.LoadUser(int.Parse(textBoxGetUser.Text));
+            user = userDAO.LoadUser(int.Parse(textBoxIDUser.Text));
             List<User> users = userDAO.LoadAllUser();
             if (radioButtonConfrim.Checked)
             {
@@ -49,22 +49,31 @@ namespace ExampleSQLApp
         // При нажатии на кнопку , перезаписывает данные о пользователе, с указанием на измененный ID
         private void IDSetButton_Click(object sender, EventArgs e)
         {
-            if (textBoxIDUser.Text != "" && IsdigitOrSymbol(textBoxIDUser.Text) == false)
+            UserDAO userDAO = new UserDAO();
+            User user = userDAO.LoadUser(1);
+            user.ID = int.Parse(textBoxIDUser.Text);
+            List<User> users = userDAO.LoadAllUser();
+            for (int i = 0; i < users.Count; i++)
             {
-                UserDAO userDAO = new UserDAO();
-                User user = userDAO.LoadUser(1);
-                user.ID = int.Parse(textBoxIDUser.Text);
-                List<User> users = userDAO.LoadAllUser();
-                users.Add(user);
-                for (int i = 0; i < users.Count; i++)
+                if (users[i].ID == user.ID)
                 {
-                    if (users[i].ID == 1)
-                        users.RemoveAt(i);
+                    MessageBox.Show("Такой ID Уже существует в базе");
+                    break;
                 }
-                userDAO.SaveAllUsers(users);
+                else if (textBoxIDUser.Text != "" && IsdigitOrSymbol(textBoxIDUser.Text) == false)
+                {
+                    users.Add(user);
+                    for (int j = 0; i < users.Count; i++)
+                    {
+                        if (users[j].ID == 1)
+                            users.RemoveAt(j);
+                    }
+                    userDAO.SaveAllUsers(users);
+                }
+                else
+                    MessageBox.Show("Введите ID");
             }
-            else
-                MessageBox.Show("Введите ID");
+
 
         }
         //Вывод данные о не загестрированном пользователе, и присваивает ему ID, который выбирает Администратор
